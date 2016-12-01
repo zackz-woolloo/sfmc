@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logs</title>
+</head>
+<body>
+
+<ul>
+    {%for log in logs%}
+    <li>
+        <h5>{{log.date_added}}</h5>
+        <p>{{log.jwt}}</p>
+    </li>
+    {%endfor%}
+</ul>
+
+</body>
+</html>
