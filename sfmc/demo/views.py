@@ -18,4 +18,5 @@ class SignInView(APIView):
 class LogView(View):
     def get(self, request, format=None):
         logs = Log.objects.all()
+        print('shoud see me')
         return render(request, 'log.html', {'logs':logs})
