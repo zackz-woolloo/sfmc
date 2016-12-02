@@ -1,7 +1,12 @@
 from rest_framework.views import APIView
 from django.shortcuts import render, redirect, resolve_url
 from django.views.generic import View
+from django.http import HttpResponse
 from .models import Log
+
+class IndexView(View):
+    def get(self, request, format=None):
+        return HttpResponse('ok')
 
 class SignInView(APIView):
 
@@ -18,5 +23,4 @@ class SignInView(APIView):
 class LogView(View):
     def get(self, request, format=None):
         logs = Log.objects.all()
-        print('shoud see me')
         return render(request, 'log.html', {'logs':logs})
