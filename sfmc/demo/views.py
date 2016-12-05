@@ -5,7 +5,9 @@ from django.http import HttpResponse
 from .models import Log, AccessToken
 import requests, json
 
-app_sig = 'uoa2fnkmnsb4y0plxrtazqywryhgv0d4atzy0faseuftwzmjjahgpvjwmjlzr0flsfs2ekk3zh4q2wacywgv0omewxzburezudtadh4nkmdjnrxvkagx5dcscx2ywe3ozcico2otlgctkhoyr3qn131iozgyudo52hqcqqkuzdgnsylcasaa22kpj1pfqx0e2as1jyncnnouwfyyf5hhguboe4owwityzofhqobqa2fdcn1241loitpjeox3b2q'
+app_sig = '4jl0ssf4wzjpk04gzc3ox3ihsbtyqybzmlslghdln42zktzdyvwnjocvh5cbddtju0r4y3yduohwfnsyh1opfyglac55b3swdswnhgy4broxalzpvvd3fzspo4rx2s3tyjdomccjd4x32zfjsxl3gmz0ktazysnhkoaroi3x4ysslkbwinxjscpnsthdmw2ig3bcejqs2l3mhxmx3vc1b1wwiu0aff0r4tenzgyz04aaos1xycgcqbbog42jea2'
+client_id = '4a44m9ej6uw2w5vp2ip5p5b9'
+client_secret = '7phHgkukdMJLERGQfgOOh5Jg'
 
 class IndexView(View):
     def get(self, request, format=None):
@@ -22,8 +24,8 @@ class SignInView(APIView):
         refresh_token = rest['refreshToken']
 
         data = {
-            'clientId':'szx4b3jywxd8you65cq5wtaa', 
-            'clientSecret':'q32JBWUJTLnO0AUazQOxl7Ry', 
+            'clientId':client_id, 
+            'clientSecret':client_secret, 
             'refreshToken':refresh_token, 
             'accessType':'offline'
         }
@@ -58,8 +60,8 @@ class RefreshTokenView(APIView):
         access_token = AccessToken.objects.first()
         auth_url = access_token.auth_url
         data = {
-            'clientId':'szx4b3jywxd8you65cq5wtaa', 
-            'clientSecret':'q32JBWUJTLnO0AUazQOxl7Ry', 
+            'clientId':client_id, 
+            'clientSecret':client_secret, 
             'refreshToken':access_token.refresh_token, 
             'accessType':'offline'
         }
