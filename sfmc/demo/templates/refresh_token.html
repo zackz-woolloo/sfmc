@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h1>Access Token <a href="{%url 'sfmc.refresh_token' %}">Refresh</a></h1>
+<div>
+    <p>Access Token: {{access_token.access_token}}</p>
+    <p>Refresh Token: {{access_token.refresh_token}}</p>
+    <p>Expires In: {{access_token.expires_in}}</p>
+    <p>Auth URL: {{access_token.auth_url}}</p>
+</div>
+</body>
+</html>

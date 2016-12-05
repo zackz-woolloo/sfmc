@@ -20,5 +20,6 @@ from demo import views
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^sfmc/sign_in/$', views.SignInView.as_view(), name='sfmc.signin'),
+    url(r'^sfmc/refresh_token/$', views.RefreshTokenView.as_view(), name='sfmc.refresh_token'),
     url(r'^logs/$', views.LogView.as_view(), name='sfmc.logs'),
 ]
