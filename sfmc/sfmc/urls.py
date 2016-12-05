@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^sfmc/sign_in/$', views.SignInView.as_view(), name='sfmc.signin'),
     url(r'^sfmc/refresh_token/$', views.RefreshTokenView.as_view(), name='sfmc.refresh_token'),
     url(r'^logs/$', views.LogView.as_view(), name='sfmc.logs'),
+    url(r'^activity/config.json', views.ActivityConfigJSONView.as_view(), name='activity.config.json')
 ]

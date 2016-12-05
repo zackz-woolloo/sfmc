@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from django.shortcuts import render, redirect, resolve_url
 from django.views.generic import View
 from django.http import HttpResponse
+from rest_framework.response import Response
 from .models import Log, AccessToken
 import requests, json
 
@@ -12,6 +13,101 @@ client_secret = '7phHgkukdMJLERGQfgOOh5Jg'
 class IndexView(View):
     def get(self, request, format=None):
         return render(request, 'index.html', {})
+
+class ActivityConfigJSONView(APIView):
+    def get(self, request, *args, **kwargs):
+        return Response({
+                "workflowApiVersion": "1.1",
+                "metaData": {
+                   "icon": "images/sms.png",
+                   "iconSmall": "images/smsSmall.png",
+                   "category": "message"
+                },
+                "type": "REST",
+                "lang": {
+                   "en-US": {
+                       "name": "REST Activity (Workflow API v1.1)",
+                       "description": "An example REST activity using workflow API v1.1 format."
+                   }
+                },
+                "arguments": {
+                    "execute": {
+                        "inArguments": [
+                            {
+                                "emailAddress": "{{InteractionDefaults.Email}}"
+                            },
+                            {
+                                "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+                            }
+                        ],
+                        "outArguments": [
+                            {
+                                "foundSignupDate": ""
+                            }
+                        ],
+                        "url": "https://some-endpoint.com/execute"
+                    }
+                },
+                "configurationArguments": {
+                   "applicationExtensionKey": "<key from app center>",
+                   "save": {
+                       "url": "URI/for/your/activity/save"
+                   },
+                   "publish": {
+                       "url": "URI/for/your/activity/publish"
+                   },
+                   "validate": {
+                       "url": "URI/for/your/activity/validate"
+                   },
+                   "stop": {
+                       "url": "URI/for/your/activity/stop"
+                   }
+                },
+                "wizardSteps": [
+                   { "label": "Step 1", "key": "step1" },
+                   { "label": "Step 2", "key": "step2" },
+                   { "label": "Step 3", "key": "step3" },
+                   { "label": "Step 4", "key": "step4", "active": False }
+                ],
+                "userInterfaces": {
+                   "configModal": {
+                       "height": 200,
+                       "width": 300,
+                       "fullscreen": True
+                   }
+                },
+                "schema": {
+                    "arguments": {
+                        "execute": {
+                            "inArguments": [
+                                {
+                                    "phoneNumber": {
+                                        "dataType": "Phone",
+                                        "isNullable": False,
+                                        "direction": "in"   
+                                    }
+                                },
+                                {
+                                    "emailAddress": {
+                                        "dataType": "Email",
+                                        "isNullable": False,
+                                        "direction": "in"
+                                    }
+                                }
+                            ],
+                            "outArguments": [
+                                {
+                                    "foundSignupDate": {
+                                        "dataType": "Date",
+                                        "direction": "out",
+                                        "access": "visible"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            })
 
 class SignInView(APIView):
 
