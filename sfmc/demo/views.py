@@ -9,7 +9,7 @@ app_sig = 'uoa2fnkmnsb4y0plxrtazqywryhgv0d4atzy0faseuftwzmjjahgpvjwmjlzr0flsfs2e
 
 class IndexView(View):
     def get(self, request, format=None):
-        return HttpResponse('ok')
+        return render(request, 'index.html', {})
 
 class SignInView(APIView):
 
