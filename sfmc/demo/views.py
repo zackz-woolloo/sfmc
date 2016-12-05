@@ -14,6 +14,10 @@ class IndexView(View):
     def get(self, request, format=None):
         return render(request, 'index.html', {})
 
+class ActivityIndexView(View):
+    def get(self, request, format=None):
+        return render(request, 'activity.html', {})
+
 class ActivityConfigJSONView(APIView):
     def get(self, request, *args, **kwargs):
         return Response({

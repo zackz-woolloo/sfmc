@@ -3,3 +3,4 @@
 *.pyc
 /sfmc/demo/views.pyc
 /sfmc/sfmc/urls.pyc
+/sfmc/sfmc/settings.pyc
