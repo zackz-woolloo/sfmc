@@ -1,3 +1,5 @@
 /env
 /sfmc/db.sqlite3
 *.pyc
+/sfmc/demo/views.pyc
+/sfmc/sfmc/urls.pyc
