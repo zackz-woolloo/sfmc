@@ -5,15 +5,22 @@
 </head>
 <body>
 
+<h1>JWT</h1>
 <ul>
-    <h1>JWT</h1>
     {%for log in logs%}
     <li>
         <h5>{{log.date_added}}</h5>
         <p>{{log.jwt}}</p>
     </li>
     {%endfor%}
+
+
 </ul>
+
+<h1>Event</h1>
+{%for event in events%}
+<div>{{event.event_id}}</div>
+{%endif%}
 
 </body>
 </html>

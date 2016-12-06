@@ -13,3 +13,6 @@ class AccessToken(models.Model):
     refresh_token = models.TextField(default='')
     expires_in = models.PositiveIntegerField(default=0)
     auth_url = models.TextField(default='')
+
+class Event(models.Model):
+    event_id = models.TextField(default='')

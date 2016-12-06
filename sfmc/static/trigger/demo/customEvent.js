@@ -27,6 +27,17 @@ define([
        
         if (data) {
             console.log(data)
+
+            $.ajax({
+                url: '/event/save/',
+                type: 'POST',
+                data: {
+                    'event_id':data.eventDefinitionKey
+                }
+            }).done(function(result){
+                console.log('saved')
+            }) 
+
             payload = data;
         }
 

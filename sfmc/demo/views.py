@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, resolve_url
 from django.views.generic import View
 from django.http import HttpResponse
 from rest_framework.response import Response
-from .models import Log, AccessToken
+from .models import Log, AccessToken, Event
 import requests, json
 
 app_sig = '4jl0ssf4wzjpk04gzc3ox3ihsbtyqybzmlslghdln42zktzdyvwnjocvh5cbddtju0r4y3yduohwfnsyh1opfyglac55b3swdswnhgy4broxalzpvvd3fzspo4rx2s3tyjdomccjd4x32zfjsxl3gmz0ktazysnhkoaroi3x4ysslkbwinxjscpnsthdmw2ig3bcejqs2l3mhxmx3vc1b1wwiu0aff0r4tenzgyz04aaos1xycgcqbbog42jea2'
@@ -94,4 +94,12 @@ class RefreshTokenView(APIView):
 class LogView(View):
     def get(self, request, format=None):
         logs = Log.objects.all()
-        return render(request, 'log.html', {'logs':logs})
+        events = Event.objects.all()
+        return render(request, 'log.html', {'logs':logs, 'events':events})
+
+class EventSaveView(APIView):
+    def post(self, request, *args, **kwargs):
+        event_id = request.POST.get('event_id')
+        Event.objects.all().delete()
+        Event.objects.create(event_id=event_id)
+        return Response({'ok':True})

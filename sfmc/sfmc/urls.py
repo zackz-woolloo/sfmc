@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^logs/$', views.LogView.as_view(), name='sfmc.logs'),
     url(r'^tokenContext/$', views.TokenContextView.as_view(), name='tokenContext'),
     url(r'^activity/(?P<action>[^/]+)/$', views.ActivityActionView.as_view(), name='activity.action'),
+    url(r'^event/save/$', views.EventSaveView.as_view(), name='event.save'),
 ]
