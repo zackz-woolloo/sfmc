@@ -159,7 +159,7 @@ class TokenContextView(APIView):
     def get(self, request, *args, **kwargs):
         token = request.GET.get('token')
         headers = {'Authorization':'Bearer ' + token}
-        r = request.get('https://www.exacttargetapis.com/platform/v1/tokenContext/', headers=headers)
+        r = requests.get('https://www.exacttargetapis.com/platform/v1/tokenContext/', headers=headers)
         response = r.json()
         print(response)
 
