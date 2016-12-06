@@ -108,11 +108,10 @@ define([
         if (access_token == null || endpoint == null) return
 
         $.ajax({
-            url: 'https://www.exacttargetapis.com/platform/v1/tokenContext/',
+            url: 'https://'+endpoint+'/platform/v1/tokenContext/',
             type: 'GET',
             headers: {
-                'Authorization':'Bearer ' + access_token,
-                'Access-Control-Allow-Origin':'*'
+                'Authorization':'Bearer ' + access_token
             }
         }).done(function(result){
             console.log(result)
