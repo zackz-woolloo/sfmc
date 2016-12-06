@@ -33,12 +33,12 @@ define([
 
     function onGetTokens (tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
-        // console.log(tokens);
+        console.log(tokens);
     }
 
     function onGetEndpoints (endpoints) {
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
-        // console.log(endpoints);
+        console.log(endpoints);
     }
 
     function onClickedNext () {
@@ -87,8 +87,8 @@ define([
 
         payload['configurationArguments'] = payload['configurationArguments'] || {};
 
-        payload.dataExtensionId = 'com.woolloo.event.demo';
-
+        payload.dataExtensionId = 'event.data.extension.id';
+        console.log(payload)
         connection.trigger('updateEvent', payload);
     }
 });
