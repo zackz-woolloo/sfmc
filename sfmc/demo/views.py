@@ -96,7 +96,8 @@ class FireEventView(APIView):
         event = Event.objects.first()
         data = {
             'ContactKey':'eab23e6c-fb77-4c6f-99de-088421fb3071',
-            'EventDefinitionKey':event.event_id
+            'EventDefinitionKey':event.event_id,
+            'Data':{'subscriber_id':'eab23e6c-fb77-4c6f-99de-088421fb3071'}
         }
         access_token = AccessToken.objects.first()
         headers = {'Authorization':'Bearer ' + access_token.access_token}
