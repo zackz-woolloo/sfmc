@@ -27,7 +27,7 @@ class ActivityConfigJSONView(APIView):
                    "iconSmall": "icon.png",
                    "category": "flow"
                 },
-                "type": "REST",
+                "type": "RestDecision",
                 "lang": {
                    "en-US": {
                        "name": "woolloo Activity",
@@ -44,7 +44,7 @@ class ActivityConfigJSONView(APIView):
                         ],
                         "outArguments": [
                             {
-                                "match": False
+                                "branchResult": False
                             }
                         ],
                         "url": "https://sfmc.woolloo.com/activity/execute/"
@@ -76,6 +76,20 @@ class ActivityConfigJSONView(APIView):
                        "fullscreen": True
                    }
                 },
+                "outcomes":[
+                     {
+                        "arguments": {
+                            "branchResult": "match",
+                            "some argument": True
+                        }
+                    },
+                    {
+                        "arguments": {
+                            "branchResult": "not_match",
+                            "some argument": False
+                        }
+                    },
+                ],
                 "schema": {
                     "arguments": {
                         "execute": {
@@ -97,7 +111,7 @@ class ActivityConfigJSONView(APIView):
                             ],
                             "outArguments": [
                                 {
-                                    "match": {
+                                    "branchResult": {
                                         "dataType": "Boolean",
                                         "direction": "out",
                                         "access": "visible"
