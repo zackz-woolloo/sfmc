@@ -6,6 +6,23 @@
 </head>
 <body>
 Your name: <input id="input-name" />
+
+<div id="token"></div>
+<div id="baseUrl"></div>
+<script type="text/javascript" src="{% static 'jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'require.js' %}"></script>
+<script type="text/javascript">
+        (function() {
+            var config = {
+                baseUrl: '/static/'
+            };
+
+            var dependencies = [
+                'customActivity'
+            ];
+
+            require(config, dependencies);
+        })();
+    </script>
 </body>
 </html>
