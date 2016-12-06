@@ -23,8 +23,8 @@ class ActivityConfigJSONView(APIView):
         return Response({
                 "workflowApiVersion": "1.1",
                 "metaData": {
-                   "icon": "icon.png",
-                   "iconSmall": "icon.png",
+                   "icon": "/static/icon.png",
+                   "iconSmall": "/static/icon.png",
                    "category": "flow"
                 },
                 "type": "REST",
@@ -114,7 +114,7 @@ class TriggerConfigJSONView(APIView):
         return Response({
             "workflowApiVersion": "1.1",
             "metaData": {
-                "icon": "icon.png"
+                "icon": "/static/icon.png"
             },
             "type": "Event",
             "lang":{
