@@ -14,6 +14,12 @@ class IndexView(View):
     def get(self, request, format=None):
         return render(request, 'index.html', {})
 
+class ActivityActionView(APIView):
+    def post(self, request, *args, **kwargs):
+        print(kwargs.get('action'))
+        print(request.POST)
+        return Response({'ok':True})
+
 
 class SignInView(APIView):
 
