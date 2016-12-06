@@ -92,6 +92,7 @@ define([
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         console.log(tokens);
         $('#token').html('token: ' + tokens.token + '  fuel2token:'+tokens.fuel2token)
+        access_token = tokens.fuel2token
         getTokenContext()
     }
 
@@ -99,6 +100,7 @@ define([
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
         console.log(endpoints);
         $('#baseUrl').html('endpoints:'+endpoints.restHost)
+        endpoint = endpoints.restHost
         getTokenContext()
     }
 
