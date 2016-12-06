@@ -99,7 +99,7 @@ define([
 
         payload['configurationArguments'] = payload['configurationArguments'] || {};
 
-        payload.dataExtensionId = '"woolloo Subscriber"';
+        payload.dataExtensionId = 'woolloo Subscriber';
         connection.trigger('updateEvent', payload);
     }
 });
