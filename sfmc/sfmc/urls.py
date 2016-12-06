@@ -25,4 +25,6 @@ urlpatterns = [
     url(r'^activity/config.json', views.ActivityConfigJSONView.as_view(), name='activity.config.json'),
     url(r'^activity/index.html', views.ActivityIndexView.as_view(), name='activity.index.html'),
     url(r'^tokenContext/$', views.TokenContextView.as_view(), name='tokenContext'),
+    url(r'^trigger/config.json', views.TriggerConfigJSONView.as_view(), name='trigger.config.json'),
+    url(r'^trigger/index.html', views.TriggerIndexView.as_view(), name='trigger.index.html'),
 ]

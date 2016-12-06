@@ -109,6 +109,44 @@ class ActivityConfigJSONView(APIView):
                 }
             })
 
+class TriggerConfigJSONView(APIView):
+    def get(self, request, *args, **kwargs):
+        return Response({
+            "workflowApiVersion": "1.1",
+            "metaData": {
+                "icon": "images/icon.png",
+                "transactionKeys": {
+                    "0": {
+                        "from": "Event Property",
+                        "to": "DE_Name.DE_Property"
+                    }
+                }
+            },
+            "type": "Event",
+            "lang":{
+                "en-US": {
+                    "name": "Something is Up!"
+                }
+            },
+            "configurationArguments": {
+                "applicationExtensionKey": "com.woolloo.trigger.demo"
+            },
+            "filterExpressionEnabled": False,
+            "wizardSteps": [
+            ],
+            "userInterfaces": {
+                "configModal": {
+                    "url": "index.html"
+                },
+                "summary": [
+                ]
+            }
+        })
+
+class TriggerIndexView(View):
+    def get(self, request, format=None):
+        return render(request, 'trigger.html', {})
+
 class SignInView(APIView):
 
     def _parse_jwt(self, token):
