@@ -15,7 +15,6 @@
         "applicationExtensionKey": "com.woolloo.trigger.demo"
     },
     "filterExpressionEnabled": false,
-    "dataExtensionId": "woolloo Subscriber",
     "wizardSteps": [
         {
             "key": "step1",
