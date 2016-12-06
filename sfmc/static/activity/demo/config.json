@@ -1,0 +1,106 @@
+{
+    "workflowApiVersion": "1.1",
+    "metaData": {
+        "icon": "icon.png",
+        "iconSmall": "icon.png",
+        "category": "flow"
+    },
+    "type": "RestDecision",
+    "lang": {
+        "en-US": {
+            "name": "woolloo Activity",
+            "description": "Tell if two inputs are match"
+        }
+    },
+    "arguments": {
+        "execute": {
+            "inArguments": [
+                {
+                    "input1": "",
+                    "input2": ""
+                }
+            ],
+            "outArguments": [
+                {
+                    "branchResult": "not_match"
+                }
+            ],
+            "url": "https://sfmc.woolloo.com/activity/execute/"
+        }
+    },
+    "configurationArguments": {
+        "applicationExtensionKey": "com.woolloo.activity.demo",
+        "save": {
+            "url": "https://sfmc.woolloo.com/activity/save/"
+        },
+        "publish": {
+            "url": "https://sfmc.woolloo.com/activity/publish/"
+        },
+        "validate": {
+            "url": "https://sfmc.woolloo.com/activity/validate/"
+        },
+        "stop": {
+            "url": "https://sfmc.woolloo.com/activity/stop/"
+        }
+    },
+    "wizardSteps": [
+        {
+            "label": "Step 1",
+            "key": "step1"
+        },
+        {
+            "label": "Step 2",
+            "key": "step2"
+        }
+    ],
+    "userInterfaces": {
+        "configModal": {
+            "height": 200,
+            "width": 300,
+            "fullscreen": true
+        }
+    },
+    "outcomes": [
+        {
+            "arguments": {
+                "branchResult": "match"
+            }
+        },
+        {
+            "arguments": {
+                "branchResult": "not_match"
+            }
+        }
+    ],
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [
+                    {
+                        "input1": {
+                            "dataType": "Text",
+                            "isNullable": false,
+                            "direction": "in"
+                        }
+                    },
+                    {
+                        "input2": {
+                            "dataType": "Text",
+                            "isNullable": false,
+                            "direction": "in"
+                        }
+                    }
+                ],
+                "outArguments": [
+                    {
+                        "branchResult": {
+                            "dataType": "Text",
+                            "direction": "out",
+                            "access": "visible"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
