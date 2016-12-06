@@ -72,6 +72,7 @@ define([
     var access_token = null
     var endpoint = null
     function onGetTokens (tokens) {
+        console.log(tokens)
         $('#token').html('token: ' + tokens.token + '  fuel2token:'+tokens.fuel2token)
         access_token = tokens.fuel2token
         getTokenContext()
@@ -80,13 +81,10 @@ define([
     function onGetEndpoints (endpoints) {
         $('#baseUrl').html('endpoints:'+endpoints.restHost)
         endpoint = endpoints.restHost
-        getTokenContext()
     }
 
     var org_id = null
     function getTokenContext() {
-        if (access_token == null || endpoint == null) return
-
         $.ajax({
             url: '/tokenContext/',
             type: 'GET',
