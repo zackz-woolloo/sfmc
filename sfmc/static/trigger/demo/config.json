@@ -3,7 +3,9 @@
     "metaData": {
         "icon": "icon.png"
     },
-    "type": "Event",
+    "type": "RestEvent",
+    "name": "Fire!",
+    "description": "Smell something?",
     "lang": {
         "en-US": {
             "name": "Something is Up!"
@@ -13,6 +15,7 @@
         "applicationExtensionKey": "com.woolloo.trigger.demo"
     },
     "filterExpressionEnabled": false,
+    "dataExtensionId": "woolloo Subscriber",
     "wizardSteps": [
         {
             "key": "step1",
