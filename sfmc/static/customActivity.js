@@ -27,6 +27,7 @@ define([
         // JB will respond the first time 'ready' is called with 'initActivity'
 
         $('#loading').show()
+        $('.step').hide();
         connection.trigger('updateButton', {
             button: 'next',
             enabled: false
@@ -121,6 +122,8 @@ define([
     }
 
     function showStep(step, stepIndex) {
+        if (org_id == null) return
+            
         if (stepIndex && !step) {
             step = steps[stepIndex-1];
         }
