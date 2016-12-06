@@ -1,5 +1,5 @@
 define([
-    '../../postmonger'
+    'postmonger'
 ], function(
     Postmonger
 ) {
