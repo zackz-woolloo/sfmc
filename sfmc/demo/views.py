@@ -155,6 +155,16 @@ class SignInView(APIView):
         payload, access_token = self._parse_jwt(token)
         return render(request, 'test.html', {'token':token, 'payload':json.dumps(payload), 'access_token':access_token})
 
+class TokenContextView(APIView):
+    def get(self, request, *args, **kwargs):
+        token = request.GET.get('token')
+        headers = {'Authorization':'Bearer ' + token}
+        r = request.get('https://www.exacttargetapis.com/platform/v1/tokenContext/', headers=headers)
+        response = r.json()
+        print(response)
+
+        return Response(response)
+
 class RefreshTokenView(APIView):
     def get(self, request, *args, **kwargs):
         access_token = AccessToken.objects.first()

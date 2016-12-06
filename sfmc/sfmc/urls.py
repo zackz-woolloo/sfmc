@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^sfmc/refresh_token/$', views.RefreshTokenView.as_view(), name='sfmc.refresh_token'),
     url(r'^logs/$', views.LogView.as_view(), name='sfmc.logs'),
     url(r'^activity/config.json', views.ActivityConfigJSONView.as_view(), name='activity.config.json'),
-    url(r'^activity/index.html', views.ActivityIndexView.as_view(), name='activity.index.html')
+    url(r'^activity/index.html', views.ActivityIndexView.as_view(), name='activity.index.html'),
+    url(r'^tokenContext/$', views.TokenContextView.as_view(), name='tokenContext'),
 ]

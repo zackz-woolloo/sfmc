@@ -108,10 +108,10 @@ define([
         if (access_token == null || endpoint == null) return
 
         $.ajax({
-            url: 'https://'+endpoint+'/platform/v1/tokenContext/',
+            url: '/tokenContext/',
             type: 'GET',
-            headers: {
-                'Authorization':'Bearer ' + access_token
+            data: {
+                'token':access_token
             }
         }).done(function(result){
             console.log(result)
