@@ -30,48 +30,44 @@ class ActivityConfigJSONView(APIView):
                 "type": "REST",
                 "lang": {
                    "en-US": {
-                       "name": "REST Activity (Workflow API v1.1)",
-                       "description": "An example REST activity using workflow API v1.1 format."
+                       "name": "woolloo Activity",
+                       "description": "Tell if two inputs are match"
                    }
                 },
                 "arguments": {
                     "execute": {
                         "inArguments": [
                             {
-                                "emailAddress": "{{InteractionDefaults.Email}}"
-                            },
-                            {
-                                "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+                                "input1": "",
+                                "input2": ""
                             }
                         ],
                         "outArguments": [
                             {
-                                "foundSignupDate": ""
+                                "match": False
                             }
                         ],
-                        "url": "https://some-endpoint.com/execute"
+                        "url": "https://sfmc.woolloo.com/activity/execute/"
                     }
                 },
                 "configurationArguments": {
-                   "applicationExtensionKey": "<key from app center>",
+                   "applicationExtensionKey": "com.woolloo.activity.demo",
                    "save": {
-                       "url": "URI/for/your/activity/save"
+                       "url": "https://sfmc.woolloo.com/activity/save/"
                    },
                    "publish": {
-                       "url": "URI/for/your/activity/publish"
+                       "url": "https://sfmc.woolloo.com/activity/publish/"
                    },
                    "validate": {
-                       "url": "URI/for/your/activity/validate"
+                       "url": "https://sfmc.woolloo.com/activity/validate/"
                    },
                    "stop": {
-                       "url": "URI/for/your/activity/stop"
+                       "url": "https://sfmc.woolloo.com/activity/stop/"
                    }
                 },
                 "wizardSteps": [
                    { "label": "Step 1", "key": "step1" },
-                   { "label": "Step 2", "key": "step2" },
-                   { "label": "Step 3", "key": "step3" },
-                   { "label": "Step 4", "key": "step4", "active": False }
+                   { "label": "Step 2", "key": "step2" }
                 ],
                 "userInterfaces": {
                    "configModal": {
@@ -85,15 +81,15 @@ class ActivityConfigJSONView(APIView):
                         "execute": {
                             "inArguments": [
                                 {
-                                    "phoneNumber": {
-                                        "dataType": "Phone",
+                                    "input1": {
+                                        "dataType": "Text",
                                         "isNullable": False,
                                         "direction": "in"   
                                     }
                                 },
                                 {
-                                    "emailAddress": {
-                                        "dataType": "Email",
+                                    "input2": {
+                                        "dataType": "Text",
                                         "isNullable": False,
                                         "direction": "in"
                                     }
@@ -101,8 +97,8 @@ class ActivityConfigJSONView(APIView):
                             ],
                             "outArguments": [
                                 {
-                                    "foundSignupDate": {
-                                        "dataType": "Date",
+                                    "match": {
+                                        "dataType": "Boolean",
                                         "direction": "out",
                                         "access": "visible"
                                     }

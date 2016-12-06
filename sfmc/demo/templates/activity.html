@@ -3,12 +3,26 @@
 <html>
 <head>
     <title>Activity</title>
+    <!--Styles-->
+    <style type="text/css">
+        body {
+            padding: 20px;
+            margin: 0;
+        }
+        .step {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-Your name: <input id="input-name" />
+<div id="loading">Loading...</div>
+<div id="step1" class="step">
+    Input 1: <input id="input-1" />
+</div>
+<div id="step2" class="step">
+    Input 1: <input id="input-2" />
+</div>
 
-<div id="token"></div>
-<div id="baseUrl"></div>
 <script type="text/javascript" src="{% static 'jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'require.js' %}"></script>
 <script type="text/javascript">
