@@ -111,7 +111,8 @@ define([
             url: 'https://www.exacttargetapis.com/platform/v1/tokenContext/',
             type: 'GET',
             headers: {
-                'Authorization':'Bearer ' + access_token
+                'Authorization':'Bearer ' + access_token,
+                'Access-Control-Allow-Origin':'*'
             }
         }).done(function(result){
             console.log(result)
