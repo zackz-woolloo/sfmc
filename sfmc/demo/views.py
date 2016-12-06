@@ -25,7 +25,7 @@ class ActivityConfigJSONView(APIView):
                 "metaData": {
                    "icon": "icon.png",
                    "iconSmall": "icon.png",
-                   "category": "message"
+                   "category": "flow"
                 },
                 "type": "REST",
                 "lang": {
