@@ -23,6 +23,4 @@ urlpatterns = [
     url(r'^sfmc/refresh_token/$', views.RefreshTokenView.as_view(), name='sfmc.refresh_token'),
     url(r'^logs/$', views.LogView.as_view(), name='sfmc.logs'),
     url(r'^tokenContext/$', views.TokenContextView.as_view(), name='tokenContext'),
-    url(r'^trigger/config.json', views.TriggerConfigJSONView.as_view(), name='trigger.config.json'),
-    url(r'^trigger/index.html', views.TriggerIndexView.as_view(), name='trigger.index.html'),
 ]

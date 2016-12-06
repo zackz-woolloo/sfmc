@@ -1,0 +1,28 @@
+{
+    "workflowApiVersion": "1.1",
+    "metaData": {
+        "icon": "icon.png"
+    },
+    "type": "Event",
+    "lang": {
+        "en-US": {
+            "name": "Something is Up!"
+        }
+    },
+    "configurationArguments": {
+        "applicationExtensionKey": "com.woolloo.trigger.demo"
+    },
+    "filterExpressionEnabled": false,
+    "wizardSteps": [
+        {
+            "key": "step1",
+            "label": "Step 1"
+        }
+    ],
+    "userInterfaces": {
+        "configModal": {
+            "url": "index.html"
+        },
+        "summary": []
+    }
+}
