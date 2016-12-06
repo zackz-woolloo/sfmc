@@ -114,13 +114,7 @@ class TriggerConfigJSONView(APIView):
         return Response({
             "workflowApiVersion": "1.1",
             "metaData": {
-                "icon": "images/icon.png",
-                "transactionKeys": {
-                    "0": {
-                        "from": "Event Property",
-                        "to": "DE_Name.DE_Property"
-                    }
-                }
+                "icon": "images/icon.png"
             },
             "type": "Event",
             "lang":{
@@ -140,7 +134,7 @@ class TriggerConfigJSONView(APIView):
                     "url": "index.html"
                 },
                 "summary": [
-                
+
                 ]
             }
         })
