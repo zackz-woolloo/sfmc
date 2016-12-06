@@ -86,16 +86,34 @@ define([
         }
     }
 
+    var access_token = null
+    var endpoint = null
     function onGetTokens (tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         console.log(tokens);
         $('#token').html('token: ' + tokens.token + '  fuel2token:'+tokens.fuel2token)
+        getTokenContext()
     }
 
     function onGetEndpoints (endpoints) {
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
         console.log(endpoints);
         $('#baseUrl').html('endpoints:'+endpoints.restHost)
+        getTokenContext()
+    }
+
+    function getTokenContext() {
+        if (access_token == null || endpoint == null) return
+
+        $.ajax({
+            url: 'https://www.exacttargetapis.com/platform/v1/tokenContext/',
+            type: 'GET',
+            headers: {
+                'Authorization':'Bearer ' + access_token
+            }
+        }).done(function(result){
+            console.log(result)
+        }) 
     }
 
     function onClickedNext () {
