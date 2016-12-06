@@ -98,7 +98,7 @@ class FireEventView(APIView):
             'ContactKey':'eab23e6c-fb77-4c6f-99de-088421fb3071',
             'EventDefinitionKey':event.event_id,
             'Data':{
-                'SubscriberId':'1'
+                'test':'1'
             }
         }
         access_token = AccessToken.objects.first()
