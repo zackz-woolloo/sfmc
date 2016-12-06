@@ -73,7 +73,7 @@ class TokenContextView(APIView):
 
         return Response(response)
 
-class RefreshTokenView(APIView):
+class RefreshTokenView(View):
     def get(self, request, *args, **kwargs):
         access_token = AccessToken.objects.first()
         auth_url = access_token.auth_url
@@ -90,6 +90,20 @@ class RefreshTokenView(APIView):
         access_token.expires_in = response['expiresIn']
         access_token.save()
         return render(request, 'refresh_token.html', {'access_token':access_token})
+
+class FireEventView(APIView):
+    def get(self, request, *args, **kwargs):
+        event = Event.objects.first()
+        data = {
+            'ContactKey':'eab23e6c-fb77-4c6f-99de-088421fb3071',
+            'EventDefinitionKey':event.event_id
+        }
+        access_token = AccessToken.objects.first()
+        headers = {'Authorization':'Bearer ' + access_token.access_token}
+        r = requests.post('https://www.exacttargetapis.com/interaction/v1/events', headers=headers, data=data)
+        response = r.json()
+        print(response)
+        return Response(response)
 
 class LogView(View):
     def get(self, request, format=None):
