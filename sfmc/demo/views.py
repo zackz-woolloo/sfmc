@@ -133,12 +133,14 @@ class TriggerConfigJSONView(APIView):
             },
             "filterExpressionEnabled": False,
             "wizardSteps": [
+                { "key": "step1", "label": "Step 1" },
             ],
             "userInterfaces": {
                 "configModal": {
                     "url": "index.html"
                 },
                 "summary": [
+                
                 ]
             }
         })
