@@ -1,13 +1,7 @@
 {
     "workflowApiVersion": "1.1",
     "metaData": {
-        "icon": "icon.png",
-        "transactionKeys": {
-            "0": {
-                "from": "Event Property",
-                "to": "DE_Name.DE_Property"
-            }
-        }
+        "icon": "icon.png"
     },
     "type": "Event",
     "lang": {

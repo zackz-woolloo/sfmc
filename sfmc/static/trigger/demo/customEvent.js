@@ -87,7 +87,7 @@ define([
 
         payload['configurationArguments'] = payload['configurationArguments'] || {};
 
-        payload.dataExtensionId = 'event.data.extension.id';
+        //payload.dataExtensionId = 'event.data.extension.id';
         console.log(payload)
         connection.trigger('updateEvent', payload);
     }
