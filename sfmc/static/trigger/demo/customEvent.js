@@ -98,8 +98,7 @@ define([
         payload['metaData'] = payload['metaData'] || {};
 
         payload['configurationArguments'] = payload['configurationArguments'] || {};
-
-        payload.dataExtensionId = 'woolloo_subscriber';
+        payload.dataExtensionId = '6e02b0b1-89ac-e611-80fe-1402ec67bfa0';
         connection.trigger('updateEvent', payload);
     }
 });
