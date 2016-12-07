@@ -91,6 +91,29 @@ class RefreshTokenView(View):
         access_token.save()
         return render(request, 'refresh_token.html', {'access_token':access_token})
 
+class CreateContactView(APIView):
+    def get(self, request, *args, **kwargs):
+        data = {
+            'ContactKey':'1234abcd',
+            'attributeSets':[
+            {
+                'name':'win',
+                'items':[{
+                    'values':[
+                        {'name':'subscriberUUID', 'value':'1234abcd'},
+                        {'name':'email', 'value':'user@company.com'},
+                        {'name':'name', 'value':'Test User'}
+                    ]
+                }]
+            }]
+        }
+        access_token = AccessToken.objects.first()
+        headers = {'Authorization':'Bearer ' + access_token.access_token}
+        r = requests.post('https://www.exacttargetapis.com/contacts/v1/contacts', headers=headers, data=data)
+        response = r.json()
+        print(response)
+        return Response(response)
+
 class FireEventView(APIView):
     def get(self, request, *args, **kwargs):
         event = Event.objects.first()

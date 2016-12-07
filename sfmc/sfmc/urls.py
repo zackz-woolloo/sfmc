@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^sfmc/sign_in/$', views.SignInView.as_view(), name='sfmc.signin'),
     url(r'^sfmc/refresh_token/$', views.RefreshTokenView.as_view(), name='sfmc.refresh_token'),
     url(r'^fire/$', views.FireEventView.as_view(), name='fire'),
+    url(r'^create_contact/$', views.CreateContactView.as_view(), name='create_contact'),
     url(r'^logs/$', views.LogView.as_view(), name='sfmc.logs'),
     url(r'^tokenContext/$', views.TokenContextView.as_view(), name='tokenContext'),
     url(r'^activity/(?P<action>[^/]+)/$', views.ActivityActionView.as_view(), name='activity.action'),
