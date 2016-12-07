@@ -91,14 +91,10 @@ define([
     }
 
     function save() {
-
         payload['arguments'] = payload['arguments'] || {};
-
-
         payload['metaData'] = payload['metaData'] || {};
-
         payload['configurationArguments'] = payload['configurationArguments'] || {};
-        payload.dataExtensionId = '6e02b0b1-89ac-e611-80fe-1402ec67bfa0';
+        payload.dataExtensionId = 'dda895e5-37bc-e611-8a02-1402ec67ad30';
         connection.trigger('updateEvent', payload);
     }
 });
