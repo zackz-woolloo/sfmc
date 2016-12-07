@@ -103,9 +103,8 @@ class FireEventView(APIView):
                         'subscriber_id':'eab23e6c-fb77-4c6f-99de-088421fb3071'
                     },
                     'values':{
-                        'first_name':'Aidan'
+                        'SubscriberKey':'eab23e6c-fb77-4c6f-99de-088421fb3071'
                     }
-                    
                 }
             ]
         }
