@@ -107,6 +107,7 @@ class FireEventView(APIView):
         headers = {'Authorization':'Bearer ' + access_token.access_token}
         r = requests.post('https://www.exacttargetapis.com/interaction/v1/events', headers=headers, data=data)
         response = r.json()
+        response['event_id'] = event.event_id
         print(response)
         return Response(response)
 

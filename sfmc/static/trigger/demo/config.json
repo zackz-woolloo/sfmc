@@ -4,8 +4,8 @@
         "icon": "icon.png",
         "transactionKeys": {
             "0": {
-                "from": "subscriberUUID",
-                "to": "win.subscriberUUID"
+                "from": "subscriberuuid",
+                "to": "win.subscriberuuid"
             }
         }
     },
