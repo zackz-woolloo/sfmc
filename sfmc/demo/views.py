@@ -94,7 +94,7 @@ class RefreshTokenView(View):
 class CreateContactView(APIView):
     def get(self, request, *args, **kwargs):
         data = {
-            'ContactKey':'1234abcd',
+            'contactKey':'1234abcd',
             'attributeSets':[
             {
                 'name':'win',
