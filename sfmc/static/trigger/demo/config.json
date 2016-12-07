@@ -1,20 +1,14 @@
 {
     "workflowApiVersion": "1.1",
     "metaData": {
-        "icon": "icon.png",
-        "transactionKeys": {
-            "0": {
-                "from": "subscriberUUID",
-                "to": "win.subscriberUUID"
-            }
-        }
+        "icon": "icon.png"
     },
     "type": "RestEvent",
     "name": "Fire!",
     "description": "Smell something?",
     "lang": {
         "en-US": {
-            "name": "Something is Up!"
+            "name": "Fire!"
         }
     },
     "configurationArguments": {
