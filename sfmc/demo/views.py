@@ -109,7 +109,7 @@ class CreateContactView(APIView):
         }
         access_token = AccessToken.objects.first()
         headers = {'Authorization':'Bearer ' + access_token.access_token}
-        r = requests.post('https://www.exacttargetapis.com/contacts/v1/contacts',  data=data)
+        r = requests.post('https://www.exacttargetapis.com/contacts/v1/contacts', headers=headers, data=data)
         response = r.json()
         print(response)
         return Response(response)
