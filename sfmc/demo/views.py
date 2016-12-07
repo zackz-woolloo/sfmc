@@ -95,7 +95,7 @@ class FireEventView(APIView):
     def get(self, request, *args, **kwargs):
         event = Event.objects.first()
         data = {
-            'ContactKey':'eab23e6c-fb77-4c6f-99de-088421fb3072',
+            'ContactKey':'aidanh@woolloo.com',
             'EventDefinitionKey':event.event_id,
             'EstablishContactKey':False
         }
