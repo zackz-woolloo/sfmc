@@ -117,15 +117,7 @@ class InsertRowView(APIView):
     def get(self, request, *args, **kwargs):
         event = Event.objects.first()
         data = [
-            {
-                'keys':{
-                    "subscriberUUID":'1234abcd'
-                },
-                'values': {
-                    'email':'user@company.com',
-                    'name':'Test User'
-                }
-            }
+            
         ]
         access_token = AccessToken.objects.first()
         headers = {'Authorization':'Bearer ' + access_token.access_token}
