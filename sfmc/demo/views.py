@@ -113,6 +113,24 @@ class CreateContactView(APIView):
         print(response)
         return Response(response)
 
+class InsertRowView(APIView):
+    def get(self, request, *args, **kwargs):
+        event = Event.objects.first()
+        data = [
+            "keys":{
+                "subscriberUUID":'1234abcd'
+            },
+            'values': {
+                'email':'user@company.com',
+                'name':'Test User'
+            }
+        ]
+        access_token = AccessToken.objects.first()
+        headers = {'Authorization':'Bearer ' + access_token.access_token}
+        r = requests.post('https://www.exacttargetapis.com/hub/v1/dataevents/dda895e5-37bc-e611-8a02-1402ec67ad30/rowset', headers=headers, data=data)
+        response = r.json()
+        return Response(response)
+
 class CreateContactEventView(APIView):
     def get(self, request, *args, **kwargs):
         event = Event.objects.first()
