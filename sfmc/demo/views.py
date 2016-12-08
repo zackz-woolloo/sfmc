@@ -129,7 +129,7 @@ class InsertRowView(APIView):
         ]
         access_token = AccessToken.objects.first()
         headers = {'Authorization':'Bearer ' + access_token.access_token}
-        r = requests.post('https://www.exacttargetapis.com/hub/v1/dataevents/dda895e5-37bc-e611-8a02-1402ec67ad30/rowset', headers=headers, data=data)
+        r = requests.post('https://www.exacttargetapis.com/hub/v1/dataevents/dda895e5-37bc-e611-8a02-1402ec67ad31/rowset', headers=headers, data=data)
         response = r.json()
         return Response(response)
 
