@@ -93,19 +93,15 @@ class RefreshTokenView(View):
 
 class CreateContactView(APIView):
     def get(self, request, *args, **kwargs):
-        data = {
-            'contactKey':'1234abcd',
-            'attributeSets':[{
-                'name':'win',
-                'items':[{
-                    'values':[
-                        {'name':'subscriberUUID', 'value':'1234abcd'},
-                        {'name':'email', 'value':'user@company.com'},
-                        {'name':'name', 'value':'Test User'}
-                    ]
-                }]
-            }]
-        }
+        data = [
+            'keys':{
+                'subscriberUUID':'1234abcd'
+            },
+            'values':{
+                'email':'user@company.com',
+                'name':'Test User'
+            }
+        ]
         access_token = AccessToken.objects.first()
         headers = {'Authorization':'Bearer ' + access_token.access_token}
         print(headers)
